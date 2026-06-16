@@ -1440,11 +1440,3 @@ app.post('/api/admin/reset', authenticateJWT, requireAdmin, async (req, res) => 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => {
-    console.log("MongoDB Connected");
-  })
-  .catch(err => {
-    console.error("MongoDB Error:", err);
-  });
